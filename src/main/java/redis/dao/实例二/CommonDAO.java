@@ -1,5 +1,8 @@
 package redis.dao.实例二;
 
+import redis.obj.User;
+
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -15,4 +18,7 @@ public interface CommonDAO {
 
     boolean liveTime(String key, long timeout);
 
+    void opsForHashPutAll(String key, Map map);
+
+    User opsForHashGet(String key, String hashKey);
 }

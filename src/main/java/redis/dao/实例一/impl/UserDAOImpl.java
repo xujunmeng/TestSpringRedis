@@ -23,6 +23,7 @@ public class UserDAOImpl implements UserDAO {
 		redisTemplate.opsForValue().set("key1", user, 20);
 	}
 
+	@Override
 	public void saveUser(User user) {
 		
 		redisTemplate.execute(new RedisCallback<Object>() {
@@ -52,6 +53,7 @@ public class UserDAOImpl implements UserDAO {
 		return null;
 	}
 
+	@Override
 	public User getUser(long id) {
 		
 		return redisTemplate.execute(new RedisCallback<User>() {
